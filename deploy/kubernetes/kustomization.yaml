@@ -14,11 +14,8 @@ resources:
 - ./manifests-monitoring/06-prometheus-dep.yaml
 - ./manifests-monitoring/07-prometheus-svc.yaml
 - ./manifests-monitoring/08-prometheus-exporter-disk-usage-ds.yaml
-
-# Apply Grafana manifests
 - ./manifests-monitoring/20-grafana-configmap.yaml
 - ./manifests-monitoring/21-grafana-dep.yaml
 - ./manifests-monitoring/22-grafana-svc.yaml
-# import grafana dashboard
 - ./manifests-monitoring/23-grafana-import-dash-batch.yaml
 
