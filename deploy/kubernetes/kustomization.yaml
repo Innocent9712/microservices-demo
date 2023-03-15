@@ -6,8 +6,6 @@ resources:
 - complete-demo.yaml
 - ingress.yaml
 - ./manifests-monitoring/00-monitoring-ns.yaml
-
-# Apply Prometheus manifests
 - ./manifests-monitoring/01-prometheus-sa.yaml
 - ./manifests-monitoring/02-prometheus-cr.yaml
 - ./manifests-monitoring/03-prometheus-crb.yaml
