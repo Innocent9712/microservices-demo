@@ -14,23 +14,23 @@ namespace: monitoring
 
 # Apply Prometheus manifests
 resources:
-  - ./manifests-monitoring/01-prometheus-cluster-role.yaml
-  - ./manifests-monitoring/02-prometheus-config-map.yaml
-  - ./manifests-monitoring/03-prometheus-deployment.yaml
-  - ./manifests-monitoring/04-prometheus-service.yaml
-  - ./manifests-monitoring/05-prometheus-alertmanager-config-map.yaml
-  - ./manifests-monitoring/06-prometheus-alertmanager-deployment.yaml
-  - ./manifests-monitoring/07-prometheus-alertmanager-service.yaml
-  - ./manifests-monitoring/08-prometheus-node-exporter-daemonset.yaml
-  - ./manifests-monitoring/09-prometheus-pushgateway-deployment.yaml
-  - ./manifests-monitoring/10-prometheus-pushgateway-service.yaml
+- ./manifests-monitoring/01-prometheus-cluster-role.yaml
+- ./manifests-monitoring/02-prometheus-config-map.yaml
+- ./manifests-monitoring/03-prometheus-deployment.yaml
+- ./manifests-monitoring/04-prometheus-service.yaml
+- ./manifests-monitoring/05-prometheus-alertmanager-config-map.yaml
+- ./manifests-monitoring/06-prometheus-alertmanager-deployment.yaml
+- ./manifests-monitoring/07-prometheus-alertmanager-service.yaml
+- ./manifests-monitoring/08-prometheus-node-exporter-daemonset.yaml
+- ./manifests-monitoring/09-prometheus-pushgateway-deployment.yaml
+- ./manifests-monitoring/10-prometheus-pushgateway-service.yaml
 
 # Apply Grafana manifests
-  - ./manifests-monitoring/20-grafana-config.yaml
-  - ./manifests-monitoring/21-grafana-deployment.yaml
-  - ./manifests-monitoring/22-grafana-service.yaml
-  - ./manifests-monitoring/23-grafana-import-dash-batch.yaml
+- ./manifests-monitoring/20-grafana-config.yaml
+- ./manifests-monitoring/21-grafana-deployment.yaml
+- ./manifests-monitoring/22-grafana-service.yaml
+- ./manifests-monitoring/23-grafana-import-dash-batch.yaml
 
 # Expose Prometheus and Grafana on NodePorts
-  - ./manifests-monitoring/11-prometheus-node-port.yaml
-  - ./manifests-monitoring/12-grafana-node-port.yaml
+- ./manifests-monitoring/11-prometheus-node-port.yaml
+- ./manifests-monitoring/12-grafana-node-port.yaml
