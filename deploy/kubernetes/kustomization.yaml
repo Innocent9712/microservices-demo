@@ -5,6 +5,7 @@ kind: Kustomization
 resources:
 - complete-demo.yaml
 - ingress.yaml
+- ./manifests-monitoring/00-monitoring-ns.yaml
 
 ---
 apiVersion: kustomize.config.k8s.io/v1beta1
