@@ -5,25 +5,28 @@ kind: Kustomization
 resources:
 - complete-demo.yaml
 - ingress.yaml
-
 - ./manifests-monitoring/00-monitoring-ns.yaml
-- ./manifests-monitoring/01-prometheus-cluster-role.yaml
-- ./manifests-monitoring/02-prometheus-config-map.yaml
-- ./manifests-monitoring/03-prometheus-deployment.yaml
-- ./manifests-monitoring/04-prometheus-service.yaml
-- ./manifests-monitoring/05-prometheus-alertmanager-config-map.yaml
-- ./manifests-monitoring/06-prometheus-alertmanager-deployment.yaml
-- ./manifests-monitoring/07-prometheus-alertmanager-service.yaml
-- ./manifests-monitoring/08-prometheus-node-exporter-daemonset.yaml
-- ./manifests-monitoring/09-prometheus-pushgateway-deployment.yaml
-- ./manifests-monitoring/10-prometheus-pushgateway-service.yaml
+
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: monitoring
+
+# Apply Prometheus manifests
+resources:
+- ./manifests-monitoring/01-prometheus-sa.yaml
+- ./manifests-monitoring/02-prometheus-cr.yaml
+- ./manifests-monitoring/03-prometheus-crb.yaml
+- ./manifests-monitoring/04-prometheus-configmap.yaml
+- ./manifests-monitoring/05-prometheus-alertrules.yaml
+- ./manifests-monitoring/06-prometheus-dep.yaml
+- ./manifests-monitoring/07-prometheus-svc.yaml
+- ./manifests-monitoring/08-prometheus-export-disk-usage-ds.yaml
 
 # Apply Grafana manifests
-- ./manifests-monitoring/20-grafana-config.yaml
-- ./manifests-monitoring/21-grafana-deployment.yaml
-- ./manifests-monitoring/22-grafana-service.yaml
+- ./manifests-monitoring/20-grafana-configmap.yaml
+- ./manifests-monitoring/21-grafana-dep.yaml
+- ./manifests-monitoring/22-grafana-svc.yaml
+# import grafana dashboard
 - ./manifests-monitoring/23-grafana-import-dash-batch.yaml
 
-# Expose Prometheus and Grafana on NodePorts
-- ./manifests-monitoring/11-prometheus-node-port.yaml
-- ./manifests-monitoring/12-grafana-node-port.yaml
