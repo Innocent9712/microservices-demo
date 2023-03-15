@@ -13,7 +13,7 @@ resources:
 - ./manifests-monitoring/05-prometheus-alertrules.yaml
 - ./manifests-monitoring/06-prometheus-dep.yaml
 - ./manifests-monitoring/07-prometheus-svc.yaml
-- ./manifests-monitoring/08-prometheus-export-disk-usage-ds.yaml
+- ./manifests-monitoring/08-prometheus-exporter-disk-usage-ds.yaml
 
 # Apply Grafana manifests
 - ./manifests-monitoring/20-grafana-configmap.yaml
